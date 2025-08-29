@@ -8,7 +8,9 @@ function App() {
 
   return (
     <>
-     
+     <div className='mx-auto mt-auto bg-sky-300 text-center p-4'>
+      Mega project 
+     </div>
     </>
   )
 }
