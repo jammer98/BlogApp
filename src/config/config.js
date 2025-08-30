@@ -1,0 +1,9 @@
+const config = {
+    appwriteURL : String(import.meta.VITE_APPWRITE_URL),
+    appwriteProjectID : string(import.meta.VTE_APPWRITE_PROJECT_ID),
+    appwriteDatabaseId : string(import.meta.VITE_APPWRITE_DATABASE_ID),
+    appwriteCollectionID : string(import.meta.VITE_APPWRITE_COLLECTION_ID),
+    appwriteBucketID : string(import.meta.VITE_APPWRITE_BUCKET_ID)
+}
+
+export default config;
