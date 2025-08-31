@@ -17,13 +17,17 @@ export class AuthService {
             .setEndpoint(config.appwriteURL)
             .setProject(config.appwriteProjectID);
         this.account = new Account(this.clinet);
+
+        // this.something is used for the instance which we are going to use inside the class 
+        // not using this can cause the variable to be lost in the class this is used to get the variable 
     }
 
 
 // this is create an account of the user
-    async createAccount ({email,password,name}){
+    async createAccount ({email,password,name}){  // we will get these parameters from the user and we use the deconstructed version of this 
         try {
-            const UserAccount = await this.account.create(ID.unique(),email, password,name)
+            const UserAccount = await this.account.create(ID.unique(),email, password,name);
+            // this .create is function defined in the account class which we are importing from the account class
 
             if(UserAccount){
                 //  if useracoount is there then call a login method 

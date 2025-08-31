@@ -14,9 +14,11 @@ export class Service{
             this.bucket = new Storage(this.clinet);
     }
 
-    async CreatePost({title ,slug ,content, featuredImage ,status ,userId}){
+    async CreatePost({title ,slug ,content, featuredImage ,status ,userId}){ // this function takes these parameters ,slug is something which gets in the url 
+        // like if a title by the user is "blog for react" then its slug is "blog-for-react"
         try {
             return await this.databases.createDocument(config.appwriteDatabaseId,config.appwriteCollectionID,slug,{title,content,featuredImage,status,userId})
+            // this take the following paramters like db id and collection id and inside {the data or the attributes we have mentioned }
         } catch (error) {
             throw error;
         }
@@ -41,7 +43,7 @@ export class Service{
         }
     }
 
-    async getPost(slug){
+    async getPost(slug){ // get single post of the slug mentioned 
         try {
             return await this.databases.getDocument(config.appwriteDatabaseId,config.appwriteCollectionID,slug)
         } catch (error) {
@@ -51,7 +53,7 @@ export class Service{
 
     }
 
-    async getPosts(queries = [Query.equal("status" , "active")]){
+    async getPosts(queries = [Query.equal("status" , "active")]){ // get all the posts whoes status is active we can apply queries on the indexed attributes
         try {
             return await this.databases.listDocuments(config.appwriteDatabaseId,config.appwriteCollectionID,queries)
         } catch (error) {
@@ -71,7 +73,7 @@ export class Service{
         }
     }
 
-    async deleteFile(fileId){
+    async deleteFile(fileId){ // this fileID is the id created by the upload file's unique ID and this id is passed in the feautured image in the create post at top
         try {
             return await this.bucket.deleteFile(config.appwriteBucketID,fileId)
             return true;

@@ -7,3 +7,6 @@ const config = {
 }
 
 export default config;
+
+
+// this is the way to check the data via vite and the appwrite 
