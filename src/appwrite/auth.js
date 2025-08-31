@@ -1,7 +1,7 @@
 // this is a service which we are creating like 
 // this service is for authentication or auth 
 
-import { ThermometerSnowflake } from "lucide-react";
+
 import config from "../config/config";
 import { Client, Account, ID } from "appwrite";
 
