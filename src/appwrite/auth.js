@@ -8,14 +8,14 @@ import { Client, Account, ID } from "appwrite";
 // then to use the functions inside this class we have to make a object of this class to access functions of this class
 
 export class AuthService {
-    clinet = new Client(); // this clinet is an object of the class Clinet
+    client = new Client(); // this clinet is an object of the class Clinet
     account;
 
     constructor(){
-        this.clinet
+        this.client
             .setEndpoint(config.appwriteURL)
             .setProject(config.appwriteProjectID);
-        this.account = new Account(this.clinet);
+        this.account = new Account(this.client);
 
         // this.something is used for the instance which we are going to use inside the class 
         // not using this can cause the variable to be lost in the class this is used to get the variable 

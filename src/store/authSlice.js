@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     status : false,
     userData : null
-    // can be empty but thsi is the default values 
+    // can be empty but this is the default values 
 }
 
 export const authSlice = createSlice({
-    name: 'auth',
+    name: "auth",
     initialState,
     reducers :{
         login : (state,action) =>{

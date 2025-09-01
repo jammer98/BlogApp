@@ -25,7 +25,7 @@ function App() {
         }
       }) 
 
-      .catch(error => console.error('error in getting th user form the database',error))
+      .catch(error => console.error('No users available ',error))
       // .catch is needed here as bcz we have not handled error in our getcurrentuser if we had done there there was no need foe this 
 
       .finally(() =>{
@@ -37,24 +37,24 @@ function App() {
     
 
     
-
-
-  
- if(loading){
+if(loading){
     // this means if loading is true then we have to show the loading symbol 
-    <div>loading screen</div>
+    return(
+    <div className="bg-pink-400">loading screen</div>
+    )
  }
- else{
-    <div className="flex flex-row flex-wrap max-w-2xs">
+else{
+  return(
+    <div className="flex flex-row flex-wrap bg-red-300 max-w-2xs">
       <div>
         <Headers/>
         <main>
-          
+          todo the main content in the page 
         </main>
         <Footer/>
       </div>
       </div>
-
+  )
  }
 }
 
