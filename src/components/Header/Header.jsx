@@ -1,9 +1,8 @@
 import React from "react";
 import LogoutBtn from "./LogoutBtn"
 import Container from "../container/Container";
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import { useSelector } from "react-redux";
-import {useNavigate } from 'react-router-dom'
 import Logo from "../Logo";
 
 
@@ -38,9 +37,6 @@ function Header (){
       active: authStatus,
     },
     ]
-
-
- 
 
     return(
         <Header classname='py-3 shadow bg-pink-300'>

@@ -3,7 +3,7 @@ import { useEffect,useState } from 'react'
 import { useSelector } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 
-export default function AuthLayout({children,authenication = true}) {
+export default function Protected({children,authenication = true}) {
     // this is for protection of the route
     const navigate = useNavigate()
     const [loader,setLoader] = useState(true)
@@ -11,10 +11,10 @@ export default function AuthLayout({children,authenication = true}) {
 
 
     useEffect(()=>{
-        if(authenication && authStatus !== authenication ){
+        if(authenication && (authStatus !== authenication) ){
             navigate('/login')
         }
-        else if(!authenication && authStatus !== authenication){
+        else if(!authenication && (authStatus !== authenication)){
             navigate('/')
         }
         setLoader(false)
@@ -24,6 +24,6 @@ export default function AuthLayout({children,authenication = true}) {
 
 
   return (
-    loader ? <h1>Loading</h1> : <>children</>
+    loader ? <h1>Loading</h1> : <>{children}</>
   )
 }

@@ -37,7 +37,7 @@ export class AuthService {
             }
         }
         catch (error) {
-            throw error;
+            console.log("appwrite auth sevice :: createAccount :: error",error);
         }
     }
 
@@ -47,41 +47,28 @@ export class AuthService {
             return await this.account.createEmailPasswordSession(email,password)
         }
         catch(error){
-            throw(error);
+            console.log("appwrite auth sevice :: login :: error",error);
         }
        
     }
 
 // this is when if the user lands to home page then he must know if he is logged in 
-    async getCurrentUser(){
-        try{
-            const user = await this.account.get();
-            // if this dont get any user then it will return null
-
-            // this is also a way to do this 
-            // if(user){
-            //     return user;
-            // }
-            // else{
-            //     return null;
-            // }
-            
-        }
-        catch(error){
-            throw error;
+  async getCurrentUser() {
+        try {
+            return await this.account.get();
+        } catch (error) {
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
 
         return null;
-        // if there is some problem in try catch then this will return null
     }
-
 
     async logout(){
         try {
             await this.account.deleteSessions()
             // await this.account.deleteSesssion('current')
         } catch (error) {
-            throw error;
+           console.log("appwrite auth sevice :: logout :: error",error);
             
         }
     }

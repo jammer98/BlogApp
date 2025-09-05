@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-dom"
+import { Link } from "react-router-dom"
 import Logo from "../Logo";
 
 function Footer (){
+
+
         return (
     <section className="relative bg-gray-400 py-10 border border-t-2 border-t-black overflow-hidden">
             <div className="z-10 relative mx-auto px-4 max-w-7xl">
@@ -142,3 +144,4 @@ function Footer (){
 }
 
 export default Footer;
+
